@@ -91,12 +91,40 @@
           </div>
           <div id="usageList" class="usage-list"></div>
           <div class="divider"></div>
+          <h3>拆版归库台</h3>
+          <div class="dismantle-panel">
+            <p id="dismantleHint" class="dismantle-hint"></p>
+            <button id="createDismantleBtn" class="primary" type="button">生成拆版单</button>
+            <div id="dismantleActive" class="dismantle-active" hidden>
+              <div id="dismantleProgress" class="dismantle-progress"></div>
+              <div id="dismantleCells" class="dismantle-cells"></div>
+              <form id="registerForm" class="register-form" hidden>
+                <p id="registerTarget" class="register-target"></p>
+                <div class="condition-row" role="radiogroup" aria-label="归还状态">
+                  <label><input type="radio" name="condition" value="intact" checked />完好</label>
+                  <label><input type="radio" name="condition" value="worn" />磨损</label>
+                  <label><input type="radio" name="condition" value="lost" />遗失</label>
+                </div>
+                <div id="lostFields" class="lost-fields" hidden>
+                  <input id="responsibleInput" type="text" placeholder="责任人" />
+                  <input id="noteInput" type="text" placeholder="遗失说明" />
+                </div>
+                <button class="primary" type="submit">登记归还</button>
+              </form>
+            </div>
+            <div id="dismantleHistory" class="dismantle-history"></div>
+          </div>
+          <div class="divider"></div>
           <h3>已保存草稿</h3>
           <div id="draftList" class="draft-list"></div>
         </aside>
       </section>
     </main>
 
+    <div id="notice" class="notice" role="status" hidden></div>
+
+    <script src="dismantle.js"></script>
+    <script src="inventory.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
