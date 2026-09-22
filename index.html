@@ -74,6 +74,7 @@
         </aside>
 
         <section class="stage-wrap">
+          <div id="freezeBanner" class="freeze-banner" hidden></div>
           <div class="status-strip">
             <div>
               <strong id="selectedTypeLabel">未选择字模</strong>
@@ -95,8 +96,22 @@
           <div id="draftList" class="draft-list"></div>
         </aside>
       </section>
+
+      <section class="dismantle-section" aria-label="拆版归库台">
+        <div class="dismantle-title">
+          <div>
+            <p class="eyebrow">逐格核对 · 完好磨损归库 · 遗失追责</p>
+            <h2>拆版归库台</h2>
+          </div>
+        </div>
+        <div id="dismantlePanel" class="dismantle-panel"></div>
+      </section>
     </main>
 
-    <script src="app.js"></script>
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+
+    <script src="js/inventory.js"></script>
+    <script src="js/dismantle.js"></script>
+    <script src="js/ui.js"></script>
   </body>
 </html>
